@@ -3,6 +3,17 @@ import jwt from 'jsonwebtoken';
 import userModel from '../../../models/userModel.js';
 import interviewReportModel from '../../../models/docModel.js';
 
+function authCookieOptions() {
+    const isProduction = process.env.FRONTEND_URL?.startsWith('https://');
+
+    return {
+        httpOnly: true,
+        secure: isProduction,
+        sameSite: isProduction ? 'none' : 'lax',
+        path: '/'
+    };
+}
+
 export async function  handleRegister(req,res){
     let {username, email, password} = req.body;
     const existeduser = await userModel.findOne({email});
@@ -36,9 +47,7 @@ export function handleLogout(req, res){
         message: "Not logged in..."
     })
     else{
-        res.clearCookie('token',{
-            path: '/'
-        });
+        res.clearCookie('token', authCookieOptions());
         res.json({
             message: "Logged out successfully..."
         })
@@ -69,8 +78,8 @@ export async function handleLogin(req,res){
     if(result){
         const token = jwt.sign({email}, process.env.JWT_SECRET);
         res.cookie('token',token,{
+            ...authCookieOptions(),
             maxAge:10000000,
-            path: '/'
         });
         res.json({
             message: "Logged in successfully.",
