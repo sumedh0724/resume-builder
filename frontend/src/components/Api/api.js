@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:3000',
+  baseURL: import.meta.env.VITE_API_URL,
   timeout: 1000000,
   headers: { 'X-Custom-Header': 'foobar' },
   withCredentials: true
@@ -85,7 +85,7 @@ export async function updateSkillCompletion(
     isCompleted
 ) {
     const response = await axios.patch(
-        `http://localhost:3000/auth/reports/${reportId}/skills/${skillGapId}`,
+        `${import.meta.env.VITE_API_URL}/auth/reports/${reportId}/skills/${skillGapId}`,
         { isCompleted },
         { withCredentials: true }
     );

@@ -366,7 +366,7 @@ function toggleSkill(reportId, skillId) {
                                             <p className="mb-1 text-sm font-medium text-[#5B7083]">
                                                 Report {filteredReports.length - index}
                                             </p>
-                                            <h3 className="break-words font-display text-3xl font-semibold leading-tight">
+                                            <h3 className="wrap-break-word font-display text-3xl font-semibold leading-tight">
                                                 {report.title || "Interview Analysis"}
                                             </h3>
                                             <p className="mt-2 text-[15px] text-[#4A6073]">
@@ -375,7 +375,7 @@ function toggleSkill(reportId, skillId) {
                                             </p>
                                             {report.resumeFile?.storedName && (
                                                 <a
-                                                    href={`http://localhost:3000/ai/reports/${report._id}/resume`}
+                                                    href={`${import.meta.env.VITE_API_URL}/ai/reports/${report._id}/resume`}
                                                     target="_blank"
                                                     rel="noreferrer"
                                                     className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[#0F2A43] underline decoration-[#F5B800] decoration-2 underline-offset-4 transition hover:text-[#173F63]"
