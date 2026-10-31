@@ -13,13 +13,13 @@ function Mark({ className = "h-9 w-9" }) {
 
 function LandingPage() {
   return (
-    <div className="rp-chart min-h-screen w-full min-w-full bg-[#F2F5F7] text-[#0F2A43]">
+    <div className="rp-chart min-h-screen w-full min-w-full bg-[#91e3ef42] text-[#0F2A43]">
 
       {/* Navbar */}
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-        <h1 className="flex items-center gap-2.5 font-display text-3xl font-bold tracking-tight">
+        <h1 id='title' className="flex items-center gap-2.5 font-display text-5xl">
           <Mark />
-          ResumePilot
+          ResumeX
         </h1>
 
         <div className="flex items-center gap-5 text-[15px] font-medium sm:gap-8">
@@ -45,7 +45,7 @@ function LandingPage() {
             Interview preparation workspace
           </p>
 
-          <h2 className="max-w-xl font-display text-6xl font-bold leading-[0.95] tracking-tight sm:text-7xl">
+          <h2 className="sub-title max-w-xl font-display text-6xl font-bold leading-[0.95] tracking-tight sm:text-7xl">
             Turn your experience into interview readiness.
           </h2>
 
@@ -129,11 +129,11 @@ function LandingPage() {
       </section>
 
       {/* Features */}
-      <section id="features" className="border-y border-[#C9D6E0] bg-white px-6 py-24">
+      <section id="features" className="border-y border-[#C9D6E0] bg-[#ffffffbf] px-6 py-24">
 
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1fr_2fr]">
 
-          <h2 className="max-w-xs font-display text-5xl font-bold leading-[0.98] tracking-tight">
+          <h2 className="sub-title max-w-xs font-display text-5xl font-bold leading-[0.98] tracking-tight">
             Everything you need to prepare for your next job
           </h2>
 

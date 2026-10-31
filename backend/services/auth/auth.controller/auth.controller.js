@@ -72,6 +72,7 @@ export async function handleLogin(req,res){
             message: "No such account exists. Please create one...",
             user: null
         });
+        res.redirect('/register')
     }
     else{
     const result = await bcrypt.compare(password, existeduser.password);
