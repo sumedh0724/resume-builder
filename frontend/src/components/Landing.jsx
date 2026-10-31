@@ -162,7 +162,7 @@ function LandingPage() {
       {/* How it works */}
       <section id="how-it-works" className="mx-auto max-w-6xl px-6 py-24">
 
-        <h2 className="font-display text-5xl font-bold tracking-tight">
+        <h2 className="sub-title font-display text-5xl font-bold tracking-tight">
           How it works
         </h2>
 
